@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name            = "bitwigbridge"
+version         = "0.1.0"
+description     = "Bitwig Studio OSC Bridge — control Bitwig from Python"
+readme          = "README.md"
+license         = { text = "MIT" }
+requires-python = ">=3.10"
+keywords        = ["bitwig", "daw", "osc", "midi", "music", "production"]
+classifiers     = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "python-osc>=1.8",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+langchain = ["langchain-core>=0.3"]
+dev       = ["pytest>=8", "pytest-mock"]
+
+[project.scripts]
+bitwigbridge-install = "bitwigbridge.extensions:install_extensions"
+
+[project.urls]
+Homepage   = "https://github.com/sijadev/bitwig-osc-bridge"
+Repository = "https://github.com/sijadev/bitwig-osc-bridge"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+bitwigbridge = ["extensions/*.bwextension"]
