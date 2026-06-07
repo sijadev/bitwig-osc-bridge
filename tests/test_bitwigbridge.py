@@ -49,6 +49,7 @@ def test_known_step_types_present():
     from bitwigbridge.executor import _SETUP_TYPES, _NOTE_TYPES
 
     assert {"set_tempo", "add_track", "load_instrument"} <= _SETUP_TYPES
+    assert {"set_send", "setup_drum_machine"} <= _SETUP_TYPES
     assert {"write_notes", "write_drum_pattern"} <= _NOTE_TYPES
 
 

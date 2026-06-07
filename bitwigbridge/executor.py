@@ -26,7 +26,8 @@ load_dotenv()
 from bitwigbridge.protocols import DrumPatternResolver
 
 _SETUP_TYPES = {"set_tempo", "add_track", "load_instrument", "append_effect",
-                "set_param", "set_param_named", "set_send", "select_track", "clear_tracks"}
+                "set_param", "set_param_named", "set_send", "setup_drum_machine",
+                "select_track", "clear_tracks"}
 _NOTE_TYPES  = {"write_notes", "write_drum_pattern"}
 
 
